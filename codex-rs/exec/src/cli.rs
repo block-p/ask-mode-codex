@@ -69,6 +69,11 @@ pub struct Cli {
     )]
     pub json: bool,
 
+    /// Run in ask mode: suppress all tool calls so the agent can only respond
+    /// in plain text. No shell execution, no file reads or writes, no commands.
+    #[arg(long = "ask", default_value_t = false, global = true)]
+    pub ask: bool,
+
     /// Specifies file where the last message from the agent should be written.
     #[arg(
         long = "output-last-message",
